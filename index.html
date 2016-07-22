@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<title>简易音乐播放器</title>
+	<link rel="stylesheet" type="text/css" href="play.css">
+</head>
+
+<body>
+	<div id="list"></div>
+	
+	<div id="play_border">
+	<img src="./assets/background/bg_5.PNG" id="bg">
+		<p>
+			<audio src="./mp3/Carpenters - Top Of The World.mp3" id="media" autoplay="autoplay"></audio> 
+		</p>
+		<div id="lrc_border">
+			<div id="lrc_move"></div>
+		</div>	
+	</div>	
+
+	<div id="bottom">
+		<img class="icon" id="rewind" src="./assets/icons/rewind.png"></img>
+		<img class="icon" id="play" src="./assets/icons/play.png"></img>
+		<img class="icon" id="pause" src="./assets/icons/pause.png"></img>
+		<img class="icon" id="forward" src="./assets/icons/forward.png"></img>
+		
+		<span id="currentTime">00:00</span>	
+		<div id="time_move">
+			<img src="./assets/icons/dot2.png" id="process_img"></img>
+		</div>
+		<span id="totalTime">00:00</span>	
+		
+		<img class="icon_play" id="cycle" src="./assets/icons/cycle.png"></img>
+		<img class="icon_play" id="single" src="./assets/icons/single.png"></img>
+		<img class="icon_play" id="random" src="./assets/icons/random.png"></img>
+		
+	</div>
+	
+	<script src="./jquery.js"></script>	
+	<script src="./jqueryUI.js"></script>
+	<script src="./play.js"></script>
+	<script src="./actions.js"></script>
+</body>
+</html>
