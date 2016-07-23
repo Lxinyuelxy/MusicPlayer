@@ -78,6 +78,7 @@ $('#cycle').click(function(){//单曲循环
 	$('#cycle').hide();
 	$('#random').hide();
 	$('#single').show();
+	document.getElementById("media").loop="loop";
 });
 
 $('#single').click(function(){//随机播放
