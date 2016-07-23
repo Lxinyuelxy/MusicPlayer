@@ -14,7 +14,6 @@ body{
 	height: 100%;
 }
 
-
 #play_border{
 	position:absolute;
 	width:72.6%;
@@ -54,10 +53,8 @@ body{
 #lrc_move p{
 	transition:1s;
 	font-size:20px;
-	font-family:"宋体";
+	font-family:"微软雅黑";
 }
-
-
 #list{
 	position:absolute;
 	overflow:auto;
@@ -72,19 +69,15 @@ body{
 #list P{
 	font-size:20px;
 	color:#222;
-	/*text-shadow:2px 2px 5px #999;*/
+	font-family:"微软雅黑";
 	padding-left:10px;
 	cursor:pointer;
 
 }
 #list p:hover{
-	color:red;
-	opacity:0.5;
-	transition:0.15;
+	color: #FF3030  ;
 }
-#list p:Visited{
-	color:red;
-}
+
 #bottom{
 	position:absolute;
 	width:72.6%;
@@ -111,7 +104,9 @@ body{
 #process{
 	display:inline-block;
 }
-
+.time{
+	font-family:"微软雅黑";
+}
 #time_move{
 	width:500px;
     height:4px;
@@ -128,7 +123,7 @@ body{
 	width:16px;
 	height:16px;
 	top:42%;
-	left:245px;
+	left:258px;
 	z-index:1;
 }
 #process_img:hover{
