@@ -52,11 +52,11 @@ function deal_lyric_data(ajax_lrc_data){//获取歌词信息
 	var time_min;
 	var time_sec;
 	for(var i=0; i< lrc_length; ++i){
-		console.log(i+". lrc_lis:"+ lrc_list[i]);
+		//console.log(i+". lrc_lis:"+ lrc_list[i]);
 		time_min = parseInt( lrc_list[i].substr(2,1) )*60*1000;//分转毫秒
-		console.log(i+".time_min:"+time_min);
+		//console.log(i+".time_min:"+time_min);
 		time_sec = parseFloat( lrc_list[i].substr(4,5) )*1000;//秒转毫秒
-		console.log(i+".time_sec:"+time_sec);
+		//console.log(i+".time_sec:"+time_sec);
 		lrc_data.push( [time_min + time_sec,lrc_list[i].substr(10)] );
 		if(lrc_data[i][1] == ""){
 			lrc_data[i][1] = "&nbsp;";
@@ -80,13 +80,17 @@ function lrc_animate(){
 		var i=0;
 		var top=0;
 		var lrc_move = document.getElementById('lrc_move');
-		var current_time = document.getElementById("media").currentTime*1000;
-		for(i=0; i< lrc_data.length; ++i){
-			if( current_time < lrc_data[i][0] || ( i == lrc_data.length-1 ) || (current_time >=lrc_data[i][0] && current_time < lrc_data[i+1][0]) ){
+		var current_time = document.getElementById("media").currentTime*1000;	
+		console.log("lrc_data.length="+lrc_data.length);
+		var len=lrc_data.length-1;
+		for(i=0; i<len;++i){
+			//if( current_time < lrc_data[i][0] || ( i == len-1 ) || (current_time >=lrc_data[i][0] && current_time < lrc_data[i+1][0]) ){
+			if(( i == len-1 ) ||  current_time < lrc_data[i+1][0]){
 				break;
 				}
 			}
-			top = 180 - 38*i;
+		
+			top = 150 - 38*i;
 			document.getElementById("t"+lrc_data[i][0]).style.fontSize = "40px";
 			document.getElementById("t"+lrc_data[i][0]).style.color = "White";
 			if(i != 0 ){
@@ -140,6 +144,10 @@ function showTime(){
 }
 
 function play(){
+	for(i=0; i< lrc_data.length; ++i){
+		console.log(i+".time:"+lrc_data[i][0]+lrc_data[i][1]);
+			
+	}
 	lrc_animate();
 	animate=setInterval(lrc_animate,100);
 	process=setInterval(deal_process_time,100);
